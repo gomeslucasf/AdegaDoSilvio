@@ -10,14 +10,14 @@ public class Vinho {
     private float valor;
     private boolean vazio;
 
-    public Vinho(char tipo, String marca, int volume, LocalDate dataDeProducao, float valor, boolean vazio) {
+    public Vinho(char tipo, String marca, int volume, float valor) {
         this();
-        this.tipo = tipo;
-        this.marca = marca;
-        this.volume = volume;
-        this.dataDeProducao = dataDeProducao;
-        this.valor = valor;
-        this.vazio = vazio;
+        setTipo(tipo);
+        setMarca(marca);
+        setVolume(volume);
+        setDataDeProducao();
+        setValor(valor);
+        setVazio(true);
     }
 
     public Vinho() {
@@ -29,6 +29,8 @@ public class Vinho {
         this.vazio = true;
     }
     
+    // ---------> SET
+    
     public void setTipo(char tipo) {  
         
         tipo = Character.toUpperCase(tipo);
@@ -38,24 +40,26 @@ public class Vinho {
     }
 
     public void setMarca(String marca) {
-          this.marca = (marca!= "")?marca:null;
+          this.marca =marca;
     }
 
     public void setVolume(int volume) {
-        this.volume = (volume>0)? volume: null;
+        this.volume = (volume>0)? volume:0;
     }
 
-    public void setDataDeProducao(LocalDate dataDeProducao) {
-        this.dataDeProducao = dataDeProducao;
+    public void setDataDeProducao() {
+        this.dataDeProducao = LocalDate.now();
     }
 
     public void setValor(float valor) {
-        this.valor = valor;
+        this.valor = (valor>=0)?valor: 0;
     }
 
     public void setVazio(boolean vazio) {
         this.vazio = vazio;
     }
+    
+    // -----------> GET
 
     public boolean isVazio() {
         return vazio;
@@ -65,7 +69,7 @@ public class Vinho {
         return tipo;
     }
 
-    public chargetMarca() {
+    public String getMarca() {
         return marca;
     }
 
