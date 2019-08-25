@@ -8,7 +8,27 @@ public class Vinho {
     private int volume;
     private LocalDate dataDeProducao;
     private float valor;
+    private boolean vazio;
 
+    public Vinho(char tipo, String marca, int volume, LocalDate dataDeProducao, float valor, boolean vazio) {
+        this();
+        this.tipo = tipo;
+        this.marca = marca;
+        this.volume = volume;
+        this.dataDeProducao = dataDeProducao;
+        this.valor = valor;
+        this.vazio = vazio;
+    }
+
+    public Vinho() {
+        this.tipo = 0;
+        this.marca = null;
+        this.volume = 0;
+        this.dataDeProducao = null;
+        this.valor = 0;
+        this.vazio = true;
+    }
+    
     public void setTipo(char tipo) {  
         
         tipo = Character.toUpperCase(tipo);
@@ -26,12 +46,41 @@ public class Vinho {
     }
 
     public void setDataDeProducao(LocalDate dataDeProducao) {
-        this.dataDeProducao = dataDeProducao.;
+        this.dataDeProducao = dataDeProducao;
     }
 
     public void setValor(float valor) {
         this.valor = valor;
     }
+
+    public void setVazio(boolean vazio) {
+        this.vazio = vazio;
+    }
+
+    public boolean isVazio() {
+        return vazio;
+    }
+
+    public char getTipo() {
+        return tipo;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public LocalDate getDataDeProducao() {
+        return dataDeProducao;
+    }
+
+    public float getValor() {
+        return valor;
+    }
+    
     
     
     
