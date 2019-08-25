@@ -65,7 +65,7 @@ public class Vinho {
         return tipo;
     }
 
-    public String getMarca() {
+    public chargetMarca() {
         return marca;
     }
 
