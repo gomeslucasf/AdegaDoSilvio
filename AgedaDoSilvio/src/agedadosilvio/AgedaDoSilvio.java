@@ -127,13 +127,17 @@ public class AgedaDoSilvio {
                     break;
                 case 8: 
                     Vinho vinho = new Vinho('T',"sao bernardo",1000,15);
-                    SilVinhos.addGarrafaAleatorio(vinho);
-                    vinho = new Vinho('B',"Palmeras",1000,1055);
-                    SilVinhos.addGarrafaAleatorio(vinho);
-                    vinho = new Vinho('T',"Minero",500,45);
-                    SilVinhos.addGarrafaAleatorio(vinho);
-                    vinho = new Vinho('B',"SaoPaulo",1000,155);
-                    SilVinhos.addGarrafaAleatorio(vinho);
+                    if(SilVinhos.addGarrafaAleatorio(vinho))
+                    {
+                        vinho = new Vinho('B',"Palmeras",1000,1055);
+                        SilVinhos.addGarrafaAleatorio(vinho);
+                        vinho = new Vinho('T',"Minero",500,45);
+                        SilVinhos.addGarrafaAleatorio(vinho);
+                        vinho = new Vinho('B',"SaoPaulo",1000,155);
+                        SilVinhos.addGarrafaAleatorio(vinho);
+                    }
+                    
+                    
                     break;                    
                 
             }

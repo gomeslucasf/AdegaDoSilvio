@@ -62,7 +62,7 @@ public class Vinho {
     // -----------> GET
 
     public boolean isVazio() {
-        return vazio;
+        return this.vazio;
     }
 
     public char getTipo() {

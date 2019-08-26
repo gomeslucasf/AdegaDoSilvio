@@ -1,5 +1,6 @@
 package agedadosilvio;
 
+import java.util.Random;
 import javax.swing.JOptionPane;
 
 public class Adega {
@@ -13,11 +14,9 @@ public class Adega {
         setAdega();
     }
 
-    public void setAdega() {
-         //eixo X
-        for(int x=0 ; x>=colunas; x++)
-            //eixo Y
-            for(int y=0;y>=linhas;y++)
+    public void setAdega(){
+        for(int x=0 ; x>20; x++)
+            for(int y=0;y>10;y++)
                 adega[x][y] = new Vinho();
     }
 
@@ -53,11 +52,12 @@ public class Adega {
     }
     
     public boolean addGarrafaAleatorio(Vinho vinho){
-        int x = (int) Math.random() * this.linhas ;
-        int y = (int) Math.random() * this.colunas;
+        Random numeroAleatorio = new Random();
+        int x = (int) (numeroAleatorio.nextInt() % this.linhas) ;
+        int y = (int) (numeroAleatorio.nextInt() % this.colunas);
         
-        if(!adega[x][y].isVazio()){
-            adega[x][y] = vinho;
+        if(adega[x][y].isVazio()){
+            adega[x][y] = new Vinho(vinho.getTipo(),vinho.getMarca(),vinho.getVolume(),vinho.getValor());
             adega[x][y].setVazio(false);
             return true;
         }
