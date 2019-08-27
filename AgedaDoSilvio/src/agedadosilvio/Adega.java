@@ -94,8 +94,7 @@ public class Adega {
     }
     
     public Vinho vinhoMaisAntigo(){
-        Vinho vinho;
-        vinho = adega[0][0];
+        Vinho vinho = adega[0][0];
         for(int x=0 ; x<colunas; x++)
             for(int y=0;y<linhas ;y++)
                 if(!adega[x][y].isVazio() && adega[x][y].getDataDeProducao().isBefore(vinho.getDataDeProducao()))
