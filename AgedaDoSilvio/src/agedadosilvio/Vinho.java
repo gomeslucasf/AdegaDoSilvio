@@ -22,9 +22,9 @@ public class Vinho {
 
     public Vinho() {
         this.tipo = 0;
-        this.marca = null;
+        this.marca = "";
         this.volume = 0;
-        this.dataDeProducao = null;
+        this.dataDeProducao = LocalDate.now();
         this.valor = 0;
         this.vazio = true;
     }
